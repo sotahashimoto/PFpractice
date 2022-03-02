@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+
   get '/', to: 'homes#top'
 
-  devise_for :admins
+  resources :admins, only: [:snow, :update]
 end
