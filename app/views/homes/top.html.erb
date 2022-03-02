@@ -4,4 +4,8 @@
 <%# simple_format 改行等を判別して表示してくれる　%>
 <%= simple_format(@admin.self_introduction) %>
 
-<p>資格一覧</p>
+<p>取得資格</p>
+<% @certifications.each do |certification| %>
+  <%= certification.name %>
+  <%= certification.date_of_acquisition %><br>
+<% end %>

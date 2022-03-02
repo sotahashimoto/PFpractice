@@ -7,3 +7,22 @@
   <%= f.text_area :self_introduction %>
   <%= f.submit '保存' %>
 <% end %>
+
+<h1>資格新規投稿</h1>
+<%= form_for(@certification) do |f| %>
+  <h4>資格めい</h4>
+  <%= f.text_field :name %>
+
+
+
+  <%= raw sprintf(
+            f.date_select(
+              :date_of_acquisition,
+              use_month_numbers: true,
+              start_year: 2020,
+              end_year: (Time.now.year + 10),
+              default: Date.new(1989, 1, 1),
+              date_separator: '%s'),
+              '年 ', '月 ') + '日' %>
+  <%= f.submit '投稿' %>
+<% end %>

@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   def show
     @admin = Admin.find(params[:id])
+    @certification = Certification.new
   end
 
   def update
